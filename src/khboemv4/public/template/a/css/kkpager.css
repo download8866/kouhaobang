@@ -1,0 +1,159 @@
+#kkpager-box{
+	width: 100%;
+	overflow-x: auto;
+}
+#kkpager{
+	width: -webkit-max-content;
+	clear:both;
+	color:#999;
+	padding:20px 18px;
+	font-size:16px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin: 0 auto;
+  justify-content: center;
+}
+@media (max-width: 640px) {
+	#kkpager{
+		padding:20px 12px;
+	}
+}
+#kkpager a{
+	float: left;
+	border: 1px solid #ccc;
+	display: inline;
+	padding: 3px 12px;
+	margin-right: 12px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+	background: #fff;
+	text-decoration:none;
+	color:#999;
+	line-height: 26px;
+}
+
+#kkpager span.disabled{
+	width: auto;
+	height: auto;
+	float: left;
+	display: inline;
+	padding: 3px 10px 3px 10px;
+	margin:0 12px 0 0 !important;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border:1px solid #DFDFDF;
+	background-color:#FFF;
+	color:#DFDFDF;
+	line-height: 26px;
+}
+#kkpager span.curr{
+	float: left;
+	border: 1px solid #FF6600;
+	display: inline;
+	padding: 3px 12px;
+	margin-right: 12px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #FFEEE5;
+	color: #FF6600;
+	line-height: 26px;
+
+}
+#kkpager a:hover{
+	border:1px solid #FF6600;
+	background-color:#FF6600;
+	color:#fff;
+}
+#kkpager span.normalsize{
+}
+#kkpager_gopage_wrap{
+	/*position:relative;*/
+	left:0px;
+	top:0px;
+}
+/*确认按钮*/
+#kkpager_btn_go {
+	width:44px;
+	height:34px;
+	border:0px;
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	cursor:pointer;
+	background-color:#FF6600;
+	color:#FFF;
+	position:absolute;
+	/*top:0;
+	bottom: 0;*/
+	/*right: -70px;*/
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	display:none;
+}
+#kkpager_btn_go_input{
+	display: inline-block;
+	width:34px;
+	height:34px;
+	color:#999;
+	line-height: 34px;
+	text-align:center;
+	margin-left:10px;
+	margin-right:10px;
+/*	padding: 3px 4px;*/
+	border:1px solid #DFDFDF;
+	position:relative;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	top:0;
+	left: 0;
+	outline:none;
+	vertical-align: top;
+}
+
+#kkpager_btn_go_input.focus{
+	border-color:#FF6600;
+}
+
+#kkpager .pageBtnWrap{
+	float:left;
+}
+.pageBtnWrap a:first-child{
+	margin-right: 12px !important;
+}
+#kkpager .infoTextAndGoPageBtnWrap{
+	float:right;
+	padding-top: 0 !important;
+	line-height: 34px !important;
+}
+#kkpager .infoTextAndGoPageBtnWrap span{
+	position: relative;
+	display: inline-block;
+	line-height:34px;
+}
+#kkpager .spanDot{
+	float:left;
+	margin-right:12px;
+	height: 34px;
+	line-height: 26px;
+}
+
+#kkpager .currPageNum{
+	color:#FD7F4D;
+}
+
+#kkpager .infoTextAndGoPageBtnWrap{
+	padding-top:5px;
+}
+.totalText{
+	margin: 0 10px;
+}
+.goPageBox{
+	margin-left: 12px;
+}
+
