@@ -8,7 +8,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable,HasRoles;
+    use Notifiable, HasRoles;
 
     protected $table = 'users';
 
@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username','name', 'email', 'password','phone','uuid'
+        'username', 'name', 'email', 'password', 'phone', 'uuid'
     ];
 
     /**

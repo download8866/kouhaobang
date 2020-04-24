@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaySetting extends Model
 {
-   protected $guarded = [];
+    protected $guarded = [];
 }

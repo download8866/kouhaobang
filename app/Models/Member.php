@@ -10,8 +10,8 @@ use App\Notifications\ResetPasswordNotification;
 class Member extends Authenticatable
 {
     protected $table = 'members';
-    protected $guarded= [];
-    protected $hidden = ['password','remember_token'];
+    protected $guarded = [];
+    protected $hidden = ['password', 'remember_token'];
 
 
 }

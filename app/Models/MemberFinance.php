@@ -8,8 +8,8 @@ class MemberFinance extends Model
 {
     protected $guarded = [];
 
-    public  function  member()
+    public function member()
     {
-        return  $this->hasOne(Member::class,'id','mid');
+        return $this->hasOne(Member::class, 'id', 'mid');
     }
 }

@@ -19,7 +19,8 @@ class PayController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(){
+    public function index()
+    {
         return view('admin.pay.index');
     }
 
@@ -27,13 +28,14 @@ class PayController extends Controller
     /**
      * 支付配置
      */
-    public function data(){
+    public function data()
+    {
         $res = PaySetting::paginate(10)->toArray();
         $data = [
             'code' => 0,
-            'msg'   => '正在请求中...',
+            'msg' => '正在请求中...',
             'count' => $res['total'],
-            'data'  => $res['data']
+            'data' => $res['data']
         ];
         return response()->json($data);
     }
@@ -42,15 +44,16 @@ class PayController extends Controller
      * @param $id
      * 编辑
      */
-    public function edit($id){
+    public function edit($id)
+    {
         $info = PaySetting::find($id);
-        if($info->type == 'alipay'){
+        if ($info->type == 'alipay') {
             $appid = config('pay.alipay.app_id');
             $ali_public_key = config('pay.alipay.ali_public_key');
             $private_key = config('pay.alipay.private_key');
-            return view('admin.pay.alipay',compact('info','private_key','appid','ali_public_key'));
-        }else{
-            return view('admin.pay.qrcode',compact('info'));
+            return view('admin.pay.alipay', compact('info', 'private_key', 'appid', 'ali_public_key'));
+        } else {
+            return view('admin.pay.qrcode', compact('info'));
         }
     }
 
@@ -58,7 +61,7 @@ class PayController extends Controller
      * @param Request $request
      * 保存
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $info = PaySetting::find($id);
         if ($info->type == 'alipay') {
@@ -129,13 +132,12 @@ return [
 HTML;
             file_put_contents(dirname(dirname(dirname(dirname(__DIR__)))) . '/config/pay.php', $html);
             $data['status'] = $request->status == 'on' ? 1 : 0;
-            if($data['status'] == 1)
-            {
+            if ($data['status'] == 1) {
                 PaySetting::where(['id' => $id])->update($data);
-                PaySetting::where('id','!=',$id)->update(['status'=>0]);
-            }else{
+                PaySetting::where('id', '!=', $id)->update(['status' => 0]);
+            } else {
                 PaySetting::where(['id' => $id])->update($data);
-                PaySetting::where('id','!=',$id)->update(['status'=>1]);
+                PaySetting::where('id', '!=', $id)->update(['status' => 1]);
             }
             return redirect()->route('admin.pay');
         } else {
@@ -143,13 +145,12 @@ HTML;
             $data['status'] = $request->status == 'on' ? 1 : 0;
             $data['alipay_qrcode'] = $request->qrcode_alipay;
             $data['weixin_qrcode'] = $request->qrcode_weixin;
-            if($data['status'] == 1)
-            {
+            if ($data['status'] == 1) {
                 PaySetting::where(['id' => $id])->update($data);
-                PaySetting::where('id','!=',$id)->update(['status'=>0]);
-            }else{
+                PaySetting::where('id', '!=', $id)->update(['status' => 0]);
+            } else {
                 PaySetting::where(['id' => $id])->update($data);
-                PaySetting::where('id','!=',$id)->update(['status'=>1]);
+                PaySetting::where('id', '!=', $id)->update(['status' => 1]);
             }
             return redirect()->route('admin.pay');
         }

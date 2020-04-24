@@ -1,10 +1,23 @@
 <?php
 /*
- ±¾´úÂëÓÉ ¿ÚºÅ°ï ´´½¨
- ´´½¨Ê±¼ä 2020-03-01 19:44:33
- ¼¼ÊõÖ§³Ö ¿ÚºÅ°ï 
- ÑÏ½û·´±àÒë¡¢ÄæÏòµÈÈÎºÎÐÎÊ½µÄÇÖÈ¨ÐÐÎª£¬Î¥Õß½«×·¾¿·¨ÂÉÔðÈÎ
+ æœ¬ä»£ç ç”± å£å·å¸® åˆ›å»º
+ åˆ›å»ºæ—¶é—´ 2020-03-01 19:44:33
+ æŠ€æœ¯æ”¯æŒ å£å·å¸®
+ ä¸¥ç¦åç¼–è¯‘ã€é€†å‘ç­‰ä»»ä½•å½¢å¼çš„ä¾µæƒè¡Œä¸ºï¼Œè¿è€…å°†è¿½ç©¶æ³•å¾‹è´£ä»»
 */
 
-namespace App\Traits;trait curlPost{function requestPost_($url,$post_data=null){$ch=curl_init();curl_setopt($ch,CURLOPT_URL,$url);curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);curl_setopt($ch,CURLOPT_POST,1);curl_setopt($ch,CURLOPT_POSTFIELDS,$post_data);$output=curl_exec($ch);curl_close($ch);return $output;}}
-?>
+namespace App\Traits;
+trait curlPost
+{
+    function requestPost_($url, $post_data = null)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        return $output;
+    }
+}
